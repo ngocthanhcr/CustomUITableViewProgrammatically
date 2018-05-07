@@ -39,7 +39,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myTableView.rowHeight = UITableViewAutomaticDimension
         myTableView.estimatedRowHeight = 44
         
-        self.view.addSubview(myTableView)
+//        self.view.addSubview(myTableView)
+        
+        let checkbox = UISwitch()
+        self.view.addSubview(checkbox)
+        let checkbutton = UIButton()
+        self.view.addSubview(checkbutton)
+        checkbutton.setTitleColor(.black, for: .selected)
+        checkbutton.setTitle("checked", for: .selected)
+        checkbutton.setTitle("disable", for: .disabled)
+        checkbutton.setTitle("unckecked", for: .normal)
+        checkbutton.isSelected = true
+        checkbutton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: checkbutton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: checkbutton, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
+        
+        
+//        checkbutton.isEnabled = false
+        
         
     }
 
